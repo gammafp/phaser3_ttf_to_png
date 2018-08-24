@@ -44,9 +44,10 @@
 </head>
 
 <body ng-app="ttf_app">
-    <input type="text" placeholder="meta acá su texto" ng-model="valor">
     <div class="container" ng-controller="controlador">
-
+        
+        <input type="text" placeholder="meta acá su texto" ng-model="valor" ng-change="cambio()">
+        <br>
         <div id="out">
             <div class="row" ng-repeat="arr in arreglos">
                 <span class="col" ng-repeat="bitmap in arr track by $index">

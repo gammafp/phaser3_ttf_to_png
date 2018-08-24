@@ -1,11 +1,15 @@
 let ng = angular.module("ttf_app", []);
 
 ng.controller("controlador", function ($scope) {
-    let cantidadRow = 10;
+    let cantidadRow = 13;
     const letrasDefault = "abcdefghijklmnñ  opqrstuvwkyz";
     $scope.valor = letrasDefault;
 
-    out = multi(letrasDefault, cantidadRow);
-    console.log(out);
-    $scope.arreglos = out;
+
+    $scope.cambio = () => {
+        out = multi($scope.valor, cantidadRow);
+        $scope.arreglos = out;
+    }
+
+    $scope.cambio();
 });
