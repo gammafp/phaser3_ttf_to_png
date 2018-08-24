@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TTF - png</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: "press2";
+            src: url("./PressStart2P-Regular.ttf");
+        }
+
+        #out {
+            font-family: "press2";
+            display: inline-block;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        div.row {
+            display: flex;
+            outline: 1px solid green;
+        }
+
+        span.col {
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            text-align: center;
+            line-height: 16px;
+            outline: 1px solid red;
+            display: inline-block;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body ng-app="ttf_app">
+    <input type="text" placeholder="meta acá su texto" ng-model="valor">
+    <div class="container" ng-controller="controlador">
+
+        <div id="out">
+            <div class="row" ng-repeat="arr in arreglos">
+                <span class="col" ng-repeat="bitmap in arr track by $index">
+                    {{bitmap}}
+                </span>
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/angular/angular.min.js"></script>
+    <script src="./node_modules/html2canvas/dist/html2canvas.min.js"></script>
+    <script src="./src/libs.js"></script>
+    <script src="./src/main.js"></script>
+</body>
+
+</html>
