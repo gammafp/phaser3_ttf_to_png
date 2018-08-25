@@ -31,30 +31,56 @@
         }
 
         span.col {
-            font-size: 16px;
-            width: 16px;
-            height: 16px;
-            text-align: center;
-            line-height: 16px;
             outline: 1px solid red;
             display: inline-block;
             overflow: hidden;
         }
+
+        canvas,
+        img {
+            image-rendering: crisp-edges !important;
+        }
+  
     </style>
 </head>
 
 <body ng-app="ttf_app">
-    <div class="container" ng-controller="controlador">
-        
+    <div class="container" ng-controller="controlador" ng-init="init()">
+        Font name: 
+        <input type="text" placeholder="nombre de fuente" ng-model="nombre" ng-change="cambio()">
+        <br>
+        Letters:
         <input type="text" placeholder="meta acá su texto" ng-model="valor" ng-change="cambio()">
+        <br> Chars per rows:
+        <input type="number" ng-model="rowCount" ng-change="cambio()">
+        <br> font size:
+        <input type="number" ng-model="fontSize" ng-change="cambio()">
+        <br>
+        Color: 
+        <input type="text" ng-model="colorFont" ng-change="cambio()">
+        <input type="color" ng-model="colorFont" ng-change="cambio()">
+        <br>
+        Import fonts: 
+        <input type="file" placeholder="Font" id="changeFont">
         <br>
         <div id="out">
             <div class="row" ng-repeat="arr in arreglos">
-                <span class="col" ng-repeat="bitmap in arr track by $index">
+                <span class="col" ng-repeat="bitmap in arr track by $index" ng-style="styleBoxSize">
                     {{bitmap}}
                 </span>
             </div>
         </div>
+        <br>
+        <div class="json_output">
+            <br>
+            Output metadata (use in Phaser 3):
+            <pre>
+                {{metaBitmap | prettyJSON}}
+            </pre>
+        </div>
+        <br>
+        <input type="button" ng-click="generar()" value="Create font">
+
     </div>
     <script src="./node_modules/angular/angular.min.js"></script>
     <script src="./node_modules/html2canvas/dist/html2canvas.min.js"></script>
