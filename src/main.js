@@ -21,8 +21,9 @@ ng.controller("controlador", function ($scope, $timeout) {
             'font-size': size,
             'width': size,
             'height': size,
+            'color': $scope.colorFont,
+            'text-align': "center",
             'line-height': size,
-            'color': $scope.colorFont
         };
         out = convertArray($scope.valor, $scope.rowCount);
         $scope.arreglos = out;
