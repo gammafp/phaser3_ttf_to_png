@@ -6,63 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TTF - png</title>
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            box-sizing: border-box;
-        }
-
-        @font-face {
-            font-family: "press2";
-            src: url("./PressStart2P-Regular.ttf");
-        }
-
-        #out {
-            font-family: "press2";
-            display: inline-block;
-            margin-left: 20px;
-            margin-top: 20px;
-        }
-
-        div.row {
-            display: flex;
-            outline: 1px solid green;
-        }
-
-        span.col {
-            outline: 1px solid red;
-            display: inline-block;
-            overflow: hidden;
-        }
-
-        canvas,
-        img {
-            image-rendering: crisp-edges !important;
-        }
-  
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="index_assets/css/index.css">
 </head>
 
 <body ng-app="ttf_app">
+    <nav><h3>TTF to PNG</h3></nav>
+    <header>
+           
+    </header>
+    <div class="rot-container">
+            <div class="rot"></div> 
+    </div>
     <div class="container" ng-controller="controlador" ng-init="init()">
-        Font name: 
+        <div class="config">
+        <label>Font name: </label><br>
         <input type="text" placeholder="nombre de fuente" ng-model="nombre" ng-change="cambio()">
         <br>
-        Letters:
+        <label>Letters:</label><br>
+        
         <input type="text" placeholder="meta acá su texto" ng-model="valor" ng-change="cambio()">
-        <br> Chars per rows:
+        <br>
+        
+         <label>Row:</label><br>
         <input type="number" ng-model="rowCount" ng-change="cambio()">
-        <br> font size:
+        <br> <label>Font size:</label><br>
         <input type="number" ng-model="fontSize" ng-change="cambio()">
         <br>
-        Color: 
+        <label>Color: </label><br>
+        
         <input type="text" ng-model="colorFont" ng-change="cambio()">
         <input type="color" ng-model="colorFont" ng-change="cambio()">
         <br>
-        Import fonts: 
+        <label>Import fonts: </label><br>
+        
         <input type="file" placeholder="Font" id="changeFont">
-        <br>
+        </div>
+        <div class="out">
         <div id="out">
             <div class="row" ng-repeat="arr in arreglos">
                 <span class="col" ng-repeat="bitmap in arr track by $index" ng-style="styleBoxSize">
@@ -73,14 +53,14 @@
         <br>
         <div class="json_output">
             <br>
-            Output metadata (use in Phaser 3):
+            <label>Output metadata (use in Phaser 3):</label>
             <pre>
                 {{metaBitmap | prettyJSON}}
             </pre>
         </div>
         <br>
         <input type="button" ng-click="generar()" value="Create font">
-
+    </div>
     </div>
     <script src="./node_modules/angular/angular.min.js"></script>
     <script src="./node_modules/html2canvas/dist/html2canvas.min.js"></script>
