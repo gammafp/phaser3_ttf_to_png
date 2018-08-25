@@ -45,6 +45,7 @@ ng.controller("controlador", function ($scope, $timeout) {
             let a = document.createElement("a");
             a.href = canvas.toDataURL();
             a.download = `${$scope.nombre}.png`;
+            document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
         });       
