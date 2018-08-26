@@ -29,8 +29,8 @@ ng.controller("controlador", function ($scope, $timeout) {
         
         $scope.metaBitmap = {
             image: $scope.nombre,
-            width: size,
-            height: size,
+            width: $scope.fontSize,
+            height: $scope.fontSize,
             chars: $scope.valor,
             offset: {x: 0, y: 0},
             spacing: {x: 0, y: 0},
