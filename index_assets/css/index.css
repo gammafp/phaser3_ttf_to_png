@@ -47,7 +47,7 @@ nav h3{
 header{
     width: 100%;
     min-height: 70vh;
-    background: url("../img/header2.jpg") no-repeat;
+    background: url("../img/header2.png") no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
