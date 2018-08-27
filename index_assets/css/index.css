@@ -113,6 +113,7 @@ input:hover {
     color: #ffffff;
     min-height: 40px;
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .btn-1 {
