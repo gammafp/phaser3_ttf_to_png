@@ -1,4 +1,5 @@
 /* GAMMAFP */
+
 * {
     margin: 0px;
     padding: 0px;
@@ -19,11 +20,11 @@
 
 div.row {
     display: flex;
-    outline: 1px solid black;
+    outline: 1px solid green;
 }
 
 span.col {
-    outline: 1px solid black;
+    outline: 1px solid red;
     display: inline-block;
     overflow: hidden;
 }
@@ -34,7 +35,9 @@ img {
 }
 
 /* lpzMagdiel */
-nav{
+
+nav,
+footer {
     font-family: "press2";
     width: 100%;
     height: 40px;
@@ -42,12 +45,12 @@ nav{
     color: #00F5F8;
 }
 
-nav h3{
+nav h3 {
     padding-top: 10px;
     padding-left: 10px;
 }
 
-header{
+header {
     width: 100%;
     min-height: 70vh;
     background: url("../img/header2.jpg") no-repeat;
@@ -57,13 +60,13 @@ header{
     z-index: 50;
 }
 
-.rot-container{
+.rot-container {
     width: 100%;
     overflow: hidden;
     margin-bottom: 60px;
 }
 
-.rot{
+.rot {
     width: 100%;
     height: 80px;
     background: #ffffff;
@@ -73,18 +76,21 @@ header{
     position: absolute;
     z-index: 100;
 }
-.container{
+
+.container {
     width: 90%;
     min-height: 400px;
     margin-left: 5%;
     background: #ffffff;
     margin-bottom: 80px;
 }
-label{
+
+label {
     font-size: 1.2em;
     font-family: 'Quicksand', sans-serif;
 }
-input{
+
+input {
     font-size: 1.1em;
     font-family: 'Quicksand', sans-serif;
     border: 1px solid #f0f0f0;
@@ -96,13 +102,84 @@ input{
     margin-left: 0px;
     outline: none;
 }
-input:hover{
-    border: 1px solid #003656;
+
+input:hover {
+    border: 1px solid #14283D;
 }
-.out,.config{
+
+.btn {
+    background-color: #14283D;
+    border: 1px solid #14283D;
+    color: #ffffff;
+    min-height: 40px;
+    border-radius: 20px;
+}
+
+.btn-1 {
+    background-color: #14283D;
+    border: 1px solid #14283D;
+    color: #ffffff;
+    min-height: 40px;
+    border-radius: 20px;
+}
+
+#changeFont {
+    visibility: hidden;
+    width: 0;
+    position: relative;
+}
+
+#changeFont::before {
+    content: 'Subir fuentes';
+    display: inline-block;
+    background: #14283D;
+    min-height: 20px;
+    border: 1px solid #14283D;
+    border-radius: 20px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    visibility: visible;
+    position: absolute;
+    color: #ffffff;
+}
+
+.out,
+.config {
     float: left;
     width: 48%;
 }
-.out{
+
+.out {
     float: right;
+}
+
+footer {
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 10px;
+    color: #ffffff;
+}
+
+footer a {
+    color: #00F5F8;
+}
+
+/*   adaptar a moviles    */
+
+@media (max-width: 750px) {
+    header {
+        height: 30vh;
+        background-attachment: initial;
+    }
+    .out,
+    .config {
+        float: none;
+        width: 100%;
+    }
+    .out {
+        margin-top: 50px;
+    }
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TTF - png</title>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> -->
     <link rel="stylesheet" href="index_assets/css/index.css">
 </head>
 
@@ -16,12 +16,7 @@
            
     </header>
     <div class="rot-container">
-            <div class="rot">
-                
-            </div> 
-    </div>
-    <div style="text-align: center; margin-bottom: 30px; font-family: sans-serif">
-        <h1>Use in firefox please :D</h1>
+            <div class="rot"></div> 
     </div>
     <div class="container" ng-controller="controlador" ng-init="init()">
         <div class="config">
@@ -45,7 +40,7 @@
         <br>
         <label>Import fonts: </label><br>
         
-        <input type="file" placeholder="Font" id="changeFont">
+            <input type="file" name="changeFont" id="changeFont" class="inputfile custom"/>
         </div>
         <div class="out">
         <div id="out">
@@ -64,9 +59,10 @@
             </pre>
         </div>
         <br>
-        <input type="button" ng-click="generar()" value="Create font">
+        <input type="button" ng-click="generar()" value="Create font" class="btn">
     </div>
     </div>
+    <footer>Created by: <a href="https://github.com/gammafp">Gammafp</a> and  <a href="https://github.com/lpmagdiel">lpzMagdiel</a></footer>
     <script src="./src/angular.min.js"></script>
     <script src="./src/html2canvas.min.js"></script>
     <script src="./src/libs.js"></script>
