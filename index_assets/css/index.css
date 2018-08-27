@@ -20,11 +20,11 @@
 
 div.row {
     display: flex;
-    outline: 1px solid green;
+    outline: 1px solid black;
 }
 
 span.col {
-    outline: 1px solid red;
+    outline: 1px solid black;
     display: inline-block;
     overflow: hidden;
 }
