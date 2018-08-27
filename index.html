@@ -40,7 +40,7 @@
         <br>
         <label>Import fonts: </label><br>
         
-        <input type="file" placeholder="Font" id="changeFont">
+            <input type="file" name="changeFont" id="changeFont" class="inputfile custom"/>
         </div>
         <div class="out">
         <div id="out">
@@ -59,9 +59,10 @@
             </pre>
         </div>
         <br>
-        <input type="button" ng-click="generar()" value="Create font">
+        <input type="button" ng-click="generar()" value="Create font" class="btn">
     </div>
     </div>
+    <footer>Created by: <a href="https://github.com/gammafp">Gammafp</a> and  <a href="https://github.com/lpmagdiel">lpzMagdiel</a></footer>
     <script src="./node_modules/angular/angular.min.js"></script>
     <script src="./node_modules/html2canvas/dist/html2canvas.min.js"></script>
     <script src="./src/libs.js"></script>

@@ -33,7 +33,7 @@ img {
 }
 
 /* lpzMagdiel */
-nav{
+nav,footer{
     font-family: "press2";
     width: 100%;
     height: 40px;
@@ -92,8 +92,44 @@ input{
     outline: none;
 }
 input:hover{
-    border: 1px solid #003656;
+    border: 1px solid #14283D;
 }
+.btn{
+    background-color: #14283D;
+    border: 1px solid #14283D;
+    color: #ffffff;
+    min-height: 40px;
+    border-radius: 20px;
+}
+.btn-1{
+    background-color: #14283D;
+    border: 1px solid #14283D;
+    color: #ffffff;
+    min-height: 40px;
+    border-radius: 20px;
+}
+#changeFont{
+    visibility: hidden;
+    width: 0;
+    position: relative;
+  }
+  #changeFont::before {
+    content: 'Subir fuentes';
+    display: inline-block;
+    background: #14283D;
+    min-height: 20px;
+    border: 1px solid #14283D;
+    border-radius: 20px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    visibility: visible;
+    position: absolute;
+    color: #ffffff;
+    
+  }
 .out,.config{
     float: left;
     width: 48%;
@@ -101,3 +137,27 @@ input:hover{
 .out{
     float: right;
 }
+footer{
+    font-size: 0.8em;
+    text-align: center;
+    padding-top: 10px;
+    color: #ffffff;
+}
+footer a{
+    color: #00F5F8;
+}
+
+/*   adaptar a moviles    */
+@media (max-width: 750px) {
+    header{
+        height: 30vh;
+        background-attachment: initial;
+    }
+    .out,.config{
+        float: none;
+        width: 100%;
+    }
+    .out{
+        margin-top: 50px;
+    }
+  }
