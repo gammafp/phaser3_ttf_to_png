@@ -2,7 +2,7 @@ nav > h2{
     color: #00F5F8;
 }
 header{
-    min-height: 600px;
+    min-height: 350px;
     background-image: url("../img/header2.png");
     background-position: center;
     font-size: cover;
