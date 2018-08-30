@@ -1,0 +1,39 @@
+nav > h2{
+    color: #00F5F8;
+}
+header{
+    min-height: 600px;
+    background-image: url("../img/header2.png");
+    background-position: center;
+    font-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 20px;
+}
+.app{
+    min-height: 50vh;
+}
+.panel{
+    min-height: 400px;
+}
+footer{
+    height: 50px;
+}
+footer > p{
+    padding-top: 10px;
+    color: #ffffff;
+}
+footer > p > a{
+    color: #00F5F8;
+}
+#changeFont{
+    cursor: pointer;
+    opacity: 0;
+}
+.material-icons{
+    color: #ffffff;
+    position: absolute;
+    margin-top: 5px;
+}
+.centered{
+    text-align: center;
+}
