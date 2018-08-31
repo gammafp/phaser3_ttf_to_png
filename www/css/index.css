@@ -1,6 +1,11 @@
 nav > h2{
     color: #00F5F8;
 }
+#tituloNav{
+    background: linear-gradient(135deg, #01f7ff 0%,#ffffff 28%,#01f7ff 40%,#01f7ff 54%,#01f7ff 54%,#01f7ff 59%,#ffffff 73%,#01f7ff 100%);
+    -webkit-background-clip: text;
+    color: transparent;  
+}
 header{
     min-height: 350px;
     background-image: url("../img/header2.png");
