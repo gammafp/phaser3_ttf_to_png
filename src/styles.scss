@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+canvas,
+img {
+    image-rendering: crisp-edges !important;
+}
+
+.overflow-scroll-x {
+    overflow-x: scroll;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}

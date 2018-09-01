@@ -1,0 +1,86 @@
+// Gammafp
+@font-face {
+    font-family: "press2";
+    src: url("../../assets/fonts/PressStart2P-Regular.ttf");
+}
+
+#outFont {
+    font-family: "press2";
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.row-font {
+    display: flex;
+    // outline: 1px solid black;
+}
+
+.col-font {
+    outline: 1px solid black;
+    display: inline-block;
+    overflow: hidden;
+}
+
+canvas,
+img {
+    image-rendering: crisp-edges !important;
+}
+
+// LpzMagdiel
+nav>h2 {
+    color: #00F5F8;
+}
+
+#tituloNav {
+    background: linear-gradient(135deg, #01f7ff 0%, #ffffff 28%, #01f7ff 40%, #01f7ff 54%, #01f7ff 54%, #01f7ff 59%, #ffffff 73%, #01f7ff 100%);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+header {
+    min-height: 350px;
+    background-image: url("../../assets/img/header2.png");
+    background-position: center;
+    font-size: cover;
+    background-attachment: fixed;
+    margin-bottom: 20px;
+}
+
+.app {
+    min-height: 50vh;
+}
+
+.panel {
+    min-height: 400px;
+}
+
+footer {
+    height: 50px;
+}
+
+footer>p {
+    padding-top: 10px;
+    color: #ffffff;
+}
+
+footer>p>a {
+    color: #00F5F8;
+}
+
+#changeFont {
+    cursor: pointer;
+    opacity: 0;
+}
+
+.material-icons {
+    color: #ffffff;
+    position: absolute;
+    margin-top: 5px;
+}
+
+.centered {
+    text-align: center;
+}

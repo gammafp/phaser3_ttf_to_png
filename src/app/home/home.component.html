@@ -1,0 +1,77 @@
+<nav class="navbar .navbar-dark bg-dark">
+    <h2 class="text-center" id="tituloNav">TTF TO PNG</h2>
+    <h2 class="text-center" id="tituloNav">V2.0.0</h2>
+</nav>
+<header class="md-12"></header>
+<!-- contenedor del contenido del conversor -->
+<div class="container-fluid app">
+    <div class="row">
+        <div class="border shadow-sm p-3 mb-5 bg-white rounded col-sm-12 col-md-6 ml-auto mr-auto panel">
+            <label for="nombre" class="col-sm-12 col-md-6 col-form-label">Font name:</label>
+            <div class="col-sm-12 col-md-11">
+                <input type="text" class="form-control" id="nombre" [(ngModel)]="fontName" (ngModelChange)="generateGrid()">
+            </div>
+            <label for="valor" class="col-sm-12 col-md-6 col-form-label">Letters: </label>
+            <div class="col-sm-12 col-md-11">
+                <input type="text" [(ngModel)]="letters" class="form-control" id="valor" placeholder="abc..." (ngModelChange)="generateGrid()">
+            </div>
+            <label for="filas" class="col-sm-12 col-md-6 col-form-label">Chars per row:</label>
+            <div class="col-sm-12 col-md-11">
+                <input type="number" class="form-control" id="filas" [(ngModel)]="charPerRow" (ngModelChange)="generateGrid()">
+            </div>
+
+            <label for="fontSize" class="col-sm-12 col-md-6 col-form-label">font size:</label>
+            <div class="col-sm-12 col-md-11">
+                <input type="number" class="form-control" id="fontSize" [(ngModel)]="fontSize" (ngModelChange)="generateGrid()">
+            </div>
+
+            <label for="color" class="col-sm-12 col-md-6 col-form-label">Color:</label>
+            <div class="col-md-11">
+                <div class="row col-md-12">
+                    <input type="text" class="form-control col-md-8 mr-1" id="color" [(ngModel)]="colorFont" (ngModelChange)="generateGrid()">
+                    <input type="color" class="form-control col-md-3 ml-auto" id="colorIn" [(ngModel)]="colorFont" (ngModelChange)="generateGrid()">
+                </div>
+            </div>
+            <label for="changeFont" class="col-sm-12 col-md-6 col-form-label">Importar fuente:</label>
+
+            <div class="col-sm-12 col-md-11">
+                <a class="btn btn-secondary col-md-12">
+                    <i class="material-icons">cloud_upload</i>
+                    <input type="file" class="form-control" id="changeFont" (change)="changeFont($event)">
+
+                </a>
+            </div>
+        </div>
+        <div class="border shadow-sm p-3 mb-5 bg-white rounded col-sm-12 col-md-5 mr-auto panel">
+            <h4>Preview:</h4>
+            <div class="out">
+                <div class="overflow-scroll-x">
+                    <div id="outFont">
+                        <!-- Repeat -->
+                        <div class="row-font" *ngFor="let fonts of outFont">
+                            <span class="col-font" *ngFor="let font of fonts" [ngStyle]="styleBoxSize">
+                                {{font}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="json_output">
+                    <br>
+                    <label>Output metadata (use in Phaser 3):</label>
+                    <pre>
+    {{metaBitmap | prettyJson}}
+                    </pre>
+                </div>
+                <br>
+                <div class="centered">
+                    <input type="button" (click)="generateFontPNG()" value="Create font" class="btn btn-secondary">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer -->
+<footer class="md-12 bg-dark">
+    <p class="text-center">Created by: <a href="https://github.com/gammafp">Gammafp</a>, <a href="https://github.com/lpmagdiel">lpzMagdiel</a> and <a href="#">RE2</a></p>
+</footer>
