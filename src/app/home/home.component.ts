@@ -3,6 +3,7 @@ import * as html2canvas from 'html2canvas';
 
 declare var multi: any;
 declare var $: any;
+declare var swal: any;
 
 @Component({
     selector: 'app-home',
@@ -67,12 +68,12 @@ export class HomeComponent implements OnInit {
         });
     }
     changeFont(file) {
-        console.log(file);
         const archivo = file.target.files[0];
         const lector = new FileReader();
         lector.onload = (e: any) => {
             const result = e.target.result;
             const fontStyle = document.createElement('style');
+            const fontImportName = e;
             fontStyle.appendChild(document.createTextNode(`
                 @font-face {
                     font-family: newFont;
@@ -81,6 +82,7 @@ export class HomeComponent implements OnInit {
                 `));
             document.head.appendChild(fontStyle);
             $('#outFont').style.fontFamily = 'newFont';
+            swal('Font imported', `You have imported the ${archivo.name} font`, 'success');
         };
         lector.readAsDataURL(archivo);
     }
