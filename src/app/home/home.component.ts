@@ -11,6 +11,9 @@ declare var swal: any;
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+    // Fix colorPicker hex
+    hex: any;
+
     fontName: String = 'font';
     letters: String = '0123456789   ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     charPerRow: Number = 13;
