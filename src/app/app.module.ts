@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 
 import { FormsModule } from '@angular/forms';
 import { PrettyJsonPipe } from './filters/pretty-json.pipe';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
     declarations: [
@@ -14,6 +15,7 @@ import { PrettyJsonPipe } from './filters/pretty-json.pipe';
         PrettyJsonPipe
     ],
     imports: [
+        ColorPickerModule,
         FormsModule,
         BrowserModule
     ],
