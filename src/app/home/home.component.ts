@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as html2canvas from 'html2canvas';
+import * as JSZip from 'jszip';
+import { saveAs } from 'file-saver/dist/FileSaver';
 
 declare var multi: any;
 declare var $: any;
@@ -59,15 +61,18 @@ export class HomeComponent implements OnInit {
     }
 
     generateFontPNG(): void {
+
+        const zip = new JSZip();
+        zip.file(`${this.fontName}.json`, JSON.stringify(this.metaBitmap, null, '    '));
+
         html2canvas($('#outFont'), {
             backgroundColor: 'rgba(0, 0, 0, 0)'
         }).then((canvas) => {
-            const a = document.createElement('a');
-            a.href = canvas.toDataURL();
-            a.download = `${this.fontName}.png`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
+            zip.file(`${this.fontName}.png`, canvas.toDataURL().replace('data:image/png;base64,', ''), { base64: true });
+            zip.generateAsync({ type: 'blob' })
+                .then(function (content) {
+                    saveAs(content, `ttf2png_gamma.zip`);
+                });
         });
     }
     changeFont(file) {
