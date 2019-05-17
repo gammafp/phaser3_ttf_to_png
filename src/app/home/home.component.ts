@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit {
     }
 
     generateFontPNG(): void {
-
+        const fileName = `${this.fontName}.zip`;
         const zip = new JSZip();
         zip.file(`${this.fontName}.json`, JSON.stringify(this.metaBitmap, null, '    '));
 
@@ -71,7 +71,7 @@ export class HomeComponent implements OnInit {
             zip.file(`${this.fontName}.png`, canvas.toDataURL().replace('data:image/png;base64,', ''), { base64: true });
             zip.generateAsync({ type: 'blob' })
                 .then(function (content) {
-                    saveAs(content, `ttf2png_gamma.zip`);
+                    saveAs(content, fileName);
                 });
         });
     }
